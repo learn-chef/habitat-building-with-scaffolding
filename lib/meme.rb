@@ -3,10 +3,10 @@
 # is then optimized and returned.
 #
 # @param [ImageMagick] subject The subject provided needs to be an ImageMagick object.
-# @return [ImageMagick] the animated image of the subject being habitatized.
+# @return [ImageMagick] the animated image of the subject being packaged.
 #
-def habitatize_me(subject)
-  puts 'Habitatization started!'
+def package_me(subject)
+  puts 'Packaging started!'
 
   # These two images create the container image. The subject will be placed
   # in between them.
@@ -15,7 +15,7 @@ def habitatize_me(subject)
 
   # The subject image is likely not the size of our container images so lets
   # resize it to make sure that everything works together nicely.
-  new_width = 186
+  new_width = 200
   new_height = new_width * subject.rows / subject.columns
   resized_subject = subject.adaptive_resize(new_width, new_height)
 
