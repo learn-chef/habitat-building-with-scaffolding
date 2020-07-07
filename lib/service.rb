@@ -8,7 +8,7 @@ require 'rmagick'
 # @see http://www.rubydoc.info/stdlib/tmpdir
 require 'tmpdir'
 
-# This is where the `habitatize_me` method can be found.
+# This is where the `package_me` method can be found.
 require_relative 'meme'
 
 # This is the front page of the site (e.g. http://localhost:PORT/ )
@@ -19,20 +19,20 @@ end
 
 # Create a temporary directory for us to use as a location to store
 # the images that we create for the users that visit the site.
-tmpdir = Dir.mktmpdir('habitatize')
+tmpdir = Dir.mktmpdir('packaged')
 set :public_folder, tmpdir
 
 # The form in the index page's HTML sends the image data to this
 # page. The image is found, turned into an ImageMagick object,
-# habitatized, and then written out to the tmp directory.
-post '/habitatized' do
+# packaged, and then written out to the tmp directory.
+post '/packaged' do
   tempfile = params[:file][:tempfile]
   subject = Magick::ImageList.new(tempfile.path)
 
-  result = habitatize_me(subject)
+  result = package_me(subject)
 
   result.write(File.join(tmpdir,'final.gif'))
 
-  # This loads the template file in `lib/views/habitatized.erb`
-  erb :habitatized
+  # This loads the template file in `lib/views/packaged.erb`
+  erb :packaged
 end
