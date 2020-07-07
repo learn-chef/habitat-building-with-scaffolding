@@ -1,6 +1,6 @@
-# Habitatize
+# meme-machine
 
-"Habitatize Yourself" (tm) in this web application.
+"Make a Learn Chef Meme in this web application.
 
 ## Build
 
@@ -26,4 +26,4 @@ The Rackup configuration file loads the file that contains the website applicati
 
 The default port that Rackup will launch the application is 9292. When you visit that site you will be executing the code defined in the `lib/service.rb`. The default index page routes to the block of code defined for `get '/'`. It will render the index template found in `lib/views`. This will render a simple form that will request an image.
 
-When you select an image and press 'Upload image', you will be routed to the block of code defined for `post 'habitatized'`. This will find the images provided by you and then pass that image to the method (defined in `lib/meme.rb`) that creates the animation. That animated image is then saved to the websites public directory (a temporary directory) and then served up by the habitatized template found in `lib/views`
+When you select an image and press 'Upload image', you will be routed to the block of code defined for `post 'packaged'`. This will find the images provided by you and then pass that image to the method (defined in `lib/meme.rb`) that creates the animation. That animated image is then saved to the websites public directory (a temporary directory) and then served up by the habitatized template found in `lib/views`
