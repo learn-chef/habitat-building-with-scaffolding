@@ -24,3 +24,4 @@ gem 'sinatra'
 gem 'rmagick'
 
 gem 'puma'
+#testing
