@@ -24,3 +24,5 @@ gem 'sinatra'
 gem 'rmagick'
 
 gem 'puma'
+
+# trying to commit this file
