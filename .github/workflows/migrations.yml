@@ -1,0 +1,23 @@
+name: Check Migrations
+on:
+  workflow_dispatch: {}  
+  pull_request:
+    types: ['opened', 'edited', 'reopened', 'synchronize']
+
+jobs:
+  check_migrations:
+    runs-on: ubuntu-latest
+    env:
+      alert_dba: ${{ false }}
+    outputs:
+      alert_dba: ${{ steps.check_migrations.outputs.flag }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - id: check_migrations
+        name: Check Migrations
+        run: |
+          if git diff origin/main -- lib | grep -o "ALTER TABLE.*ALTER COLUMN.*"; then
+            echo "flag=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo $flag
