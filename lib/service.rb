@@ -36,3 +36,4 @@ post '/packaged' do
   # This loads the template file in `lib/views/packaged.erb`
   erb :packaged
 end
+# ALTER TABLE
