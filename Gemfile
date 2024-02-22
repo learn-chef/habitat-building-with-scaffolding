@@ -13,12 +13,14 @@
 # This is often the default source.
 source 'https://rubygems.org'
 
-
-
-# We want to use a simple web framework and Sinatra makes it pretty easy.
+# A simple web framework and Sinatra makes it pretty easy.
 # @see http://www.sinatrarb.com/
-gem 'sinatra'
+gem 'sinatra', '~> 4.0'
 
-# We want to be able to manipulate images to create an animated GIF.
+# Command line tool for starting and stopping application.
+# @see https://github.com/rack/rackup
+gem 'rackup', '~> 2.0'
+
+# Used to manipulate images to create an animated GIF.
 # @see https://rmagick.github.io/
-gem 'rmagick'
+gem 'rmagick', '~> 4.1.2'
